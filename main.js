@@ -1,14 +1,18 @@
-const output = document.querySelector(".out-text");
-let input = document.querySelector(".input-text");
+const outputText = document.querySelector(".out-text");
+let inputText = document.querySelector(".input-text");
 const btn = document.querySelector(".run-btn");
-const form = document.querySelector("form");
 
-function run(e) {
-  e.privetnDefault();
-  alert(input.value);
-  console.log(input.value);
-  output.textContent = input.value;
+btn.addEventListener("click", decrtiption);
+
+function decrtiption(e) {
+  e.preventDefault();
+
+  let inputLength = inputText.value.length;
+  let inputSqrt = Math.sqrt(inputLength);
+
+  if (Math.pow(inputSqrt, 2) === inputLength) {
+    console.log(`${inputSqrt} x ${inputSqrt} kvadrat yasadik`);
+  } else {
+    console.log("bad");
+  }
 }
-
-btn.addEventListener("submit", run);
-// form.addEventListener("submit", run);
